@@ -1,0 +1,13 @@
+{
+  "name": "swytchcode-mcp-client",
+  "version": "2.0.0",
+  "main": "dist/mcpClient.js",
+  "types": "dist/mcpClient.d.ts",
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
