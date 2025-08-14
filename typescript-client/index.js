@@ -8,7 +8,7 @@ import 'dotenv/config';
 // ============================================================================
 
 // Define the MCP server endpoint
-const baseUrl = new URL('http://api-v2.swytchcode.com/v2/mcp/mcp');
+const baseUrl = new URL('https://api-v2.swytchcode.com/v2/mcp/mcp');
 
 // Configure authentication headers
 const customHeaders = {
