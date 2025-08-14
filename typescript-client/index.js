@@ -9,6 +9,7 @@ import 'dotenv/config';
 
 // Define the MCP server endpoint
 const baseUrl = new URL('https://api-v2.swytchcode.com/v2/mcp/mcp');
+const libraryUUID = '9c271749-af92-4c1d-95ac-a1cf10d8d322'; // Example library UUID
 
 // Configure authentication headers
 const customHeaders = {
@@ -67,14 +68,14 @@ console.log("📖 Retrieved Libraries:", libraries);
 // Read methods for a library
 // library_uuid can be obtained from the libraries resource
 const methods = await client.readResource({
-  uri: `data://methods?library_uuid=9c271749-af92-4c1d-95ac-a1cf10d8d322`,
+  uri: `data://methods?library_uuid=${libraryUUID}`,
 });
 console.log("📖 Retrieved Methods:", methods);
 
 // Read workflows for a library
 // library_uuid can be obtained from the libraries resource
 const workflows = await client.readResource({
-  uri: `data://workflows?library_uuid=9c271749-af92-4c1d-95ac-a1cf10d8d322`,
+  uri: `data://workflows?library_uuid=${libraryUUID}`,
 });
 console.log("📖 Retrieved workflows:", workflows);
 
@@ -90,7 +91,7 @@ const callTool = await client.callTool({
     session_id: 'session-1',
     prompt: 'Retrieve unsettled balance via POST request',
     language: 'python',
-    library_uuid: '9c271749-af92-4c1d-95ac-a1cf10d8d322'
+    library_uuid: libraryUUID,
   }
 });
 console.log("⚡ Tool Execution Result:", callTool);
